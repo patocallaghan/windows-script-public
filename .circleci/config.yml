@@ -1,20 +1,15 @@
 version: 2.1
-
 orbs:
-  win: circleci/windows@2.2.0
+  ruby: circleci/ruby@0.1.2 
 
 jobs:
   build:
-    executor:
-      name: win/default
+    docker:
+      - image: circleci/ruby:2.6.3-stretch-node
+    executor: ruby/default
     steps:
-      # default shell is Powershell
-      - run:            
-         command: $(echo hello | Out-Host; $?) -and $(echo world | Out-Host; $?)
-         shell: powershell.exe
+      - checkout
       - run:
-         command: echo hello && echo world
-         shell: bash.exe
-      - run:
-         command: echo hello & echo world
-         shell: cmd.exe
+          name: Which bundler?
+          command: bundle -v
+      - ruby/bundle-install
