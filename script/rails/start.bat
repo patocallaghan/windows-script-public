@@ -1,1 +1,1 @@
-./rails/bin/rails server
+.\rails\bin\rails server

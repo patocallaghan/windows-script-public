@@ -1,3 +1,3 @@
-source ./django/bin/activate
+.\Scripts\activate
 
-./django/manage.py runserver 3000
+.\django\manage.py runserver 3000
