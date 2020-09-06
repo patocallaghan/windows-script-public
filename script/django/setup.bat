@@ -1,7 +1,7 @@
-popd django
+pushd django
 python3 -m venv .
-.\Scripts\activate
-pip3 install -r requirements.txt
-.\manage.py makemigrations
-.\manage.py migrate
-pushd
+CALL .\Scripts\activate.bat
+.\Scripts\python.exe -m pip install -r requirements.txt
+.\Scripts\python.exe .\manage.py makemigrations
+.\Scripts\python.exe .\manage.py migrate
+popd

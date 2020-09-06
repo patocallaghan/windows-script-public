@@ -1,5 +1,6 @@
+setlocal
 cd rails
-.\bin\determinator
-gem install bundler
+ruby .\bin\determinator
+CALL gem install bundler
 bundle install
 bundle exec rake db:setup

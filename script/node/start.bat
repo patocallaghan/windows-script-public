@@ -1,3 +1,1 @@
-setlocal
-cd node
-npm start
+npm start --prefix node
